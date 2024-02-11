@@ -10,8 +10,7 @@
         "commands": [
           "nx lint utils",
           "nx test utils",
-          "nx build-lib utils",
-          "node utils/tools/copyright.mjs"
+          "nx build-lib utils"
         ],
         "parallel": false
       }
@@ -33,6 +32,12 @@
           "utils/src/dom/index.ts",
           "utils/src/env/index.ts"
         ]
+      }
+    },
+    "copyright": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node utils/tools/copyright.mjs"
       }
     },
     "lint": {

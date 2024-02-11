@@ -9,7 +9,7 @@
  */
 export function toCamelCase(str: string, separators: string[] = ['-', '_', ' ']): string {
   return separators.reduce((acc: string, separator: string) => {
-    const reg: RegExp = new RegExp(separator + '([\\da-z])', 'gi');
+    const reg = new RegExp(separator + '([\\da-z])', 'gi');
     return acc.replace(reg, (all: string, letter: string) => {
       return letter.toUpperCase();
     });

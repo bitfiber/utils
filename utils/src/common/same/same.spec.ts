@@ -2,9 +2,9 @@ import {stub, same, random} from '../';
 
 const obj: any = {};
 const arr: any[] = [];
-const reg: RegExp = /^reg$/;
-const sym: symbol = Symbol('sym');
-const date: Date = new Date();
+const reg = /^reg$/;
+const sym = Symbol('sym');
+const date = new Date();
 
 describe('@bitfiber/utils/same', () => {
   it('Test', () => {
