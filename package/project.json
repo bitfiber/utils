@@ -1,7 +1,7 @@
 {
   "name": "utils",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "utils/src",
+  "sourceRoot": "package/src",
   "projectType": "library",
   "targets": {
     "build": {
@@ -19,25 +19,25 @@
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "rootDir": "utils/src",
+        "rootDir": "package/src",
         "outputPath": "dist/utils",
-        "main": "utils/src/index.ts",
-        "tsConfig": "utils/tsconfig.lib.json",
+        "main": "package/src/index.ts",
+        "tsConfig": "package/tsconfig.lib.json",
         "assets": ["*.md", "LICENSE.txt"],
         "additionalEntryPoints": [
-          "utils/src/arr/index.ts",
-          "utils/src/obj/index.ts",
-          "utils/src/str/index.ts",
-          "utils/src/num/index.ts",
-          "utils/src/dom/index.ts",
-          "utils/src/env/index.ts"
+          "package/src/arr/index.ts",
+          "package/src/obj/index.ts",
+          "package/src/str/index.ts",
+          "package/src/num/index.ts",
+          "package/src/dom/index.ts",
+          "package/src/env/index.ts"
         ]
       }
     },
     "copyright": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node utils/tools/copyright.mjs"
+        "command": "node package/tools/copyright.mjs"
       }
     },
     "lint": {
@@ -48,7 +48,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "utils/jest.config.ts"
+        "jestConfig": "package/jest.config.ts"
       }
     }
   },

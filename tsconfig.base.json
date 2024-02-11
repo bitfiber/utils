@@ -19,7 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "@bitfiber/utils": [
-        "utils/src/index.ts"
+        "package/src/index.ts"
       ]
     }
   },
