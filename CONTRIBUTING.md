@@ -36,24 +36,46 @@ To contribute to our "@bitfiber/utils" library, follow these steps:
     ```bash
     cd utils
     ```
+6. Install Node.js using nvm:  
+   `<version>` - take the Node.js version
+   from [nx node versions](https://nx.dev/nx-api/workspace/documents/nx-nodejs-typescript-version-matrix) considering
+   the nx version in package.json
 
-6. Install dependencies by running:
+    ```bash
+    nvm install <version>
+    nvm use <version>
+    ```
+
+7. Install nx globally:  
+   `<version>` - version as in package.json
+
+    ```bash
+    npm add --global nx@<version>
+    ```
+
+8. Install dependencies by running:
 
    ```bash
    npm install
    ```
 
-7. Make your changes, following the guidelines and best practices outlined below.
+9. Make your changes, following the guidelines and best practices outlined below.
 
-8. Run tests to ensure that your changes haven't introduced any regressions by running:
+10. Run tests to ensure that your changes haven't introduced any regressions by running:
 
-   ```bash
-   nx test utils
-   ```
+    ```bash
+    nx test utils
+    ```
 
-9. Push your changes to your forked repository.
+11. Ensure your code adheres to the style guidelines by running ESLint:
 
-10. Submit a pull request (PR) to the [repository`s main branch](https://github.com/bitfiber/utils/tree/main),
+    ```bash
+    nx lint utils
+    ```
+
+12. Push your changes to your forked repository.
+
+13. Submit a pull request (PR) to the [repository`s main branch](https://github.com/bitfiber/utils/tree/main),
     explaining the purpose and scope of your changes.
 
 ## Guidelines and Best Practices

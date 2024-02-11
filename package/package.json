@@ -1,7 +1,7 @@
 {
   "name": "@bitfiber/utils",
   "description": "Collection of versatile utility functions for Javascript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "module": "./index.js",
   "main": "./index.js",
