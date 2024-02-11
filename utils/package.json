@@ -1,0 +1,71 @@
+{
+  "name": "@bitfiber/utils",
+  "description": "Collection of versatile utility functions for Javascript",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "./index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "typesVersions": {
+    ">=4.8.2": {
+      "*": ["*.d.ts"]
+    }
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./arr": {
+      "types": "./arr/index.d.ts",
+      "default": "./arr/index.js"
+    },
+    "./obj": {
+      "types": "./obj/index.d.ts",
+      "default": "./obj/index.js"
+    },
+    "./str": {
+      "types": "./str/index.d.ts",
+      "default": "./str/index.js"
+    },
+    "./num": {
+      "types": "./num/index.d.ts",
+      "default": "./num/index.js"
+    },
+    "./dom": {
+      "types": "./dom/index.d.ts",
+      "default": "./dom/index.js"
+    },
+    "./env": {
+      "types": "./env/index.d.ts",
+      "default": "./env/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitfiber/utils.git",
+    "directory": "utils"
+  },
+  "keywords": [
+    "Javascript",
+    "Typescript",
+    "Utils",
+    "Utilities",
+    "Helpers"
+  ],
+  "author": {
+    "name": "Zmanovskyi Oleksandr",
+    "email": "bitfiber.web@gmail.com"
+  },
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/bitfiber/utils/issues"
+  },
+  "homepage": "https://github.com/bitfiber/utils",
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {}
+}
