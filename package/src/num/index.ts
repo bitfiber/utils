@@ -1,3 +1,2 @@
-export * from './types';
-export * from './round/round';
-export * from './in-range/in-range';
+export {round} from './round/round';
+export {inRange, InRangeOptions} from './in-range/in-range';

@@ -1,4 +1,4 @@
-import {Obj, ValueUnion} from '../../';
+import {Obj, ValueUnion} from '../../common';
 import {forEachObj} from '../';
 
 /**

@@ -1,4 +1,4 @@
-import {stub, same, random} from '../';
+import {same} from '../';
 
 const obj: any = {};
 const arr: any[] = [];
@@ -8,6 +8,8 @@ const date = new Date();
 
 describe('@bitfiber/utils/same', () => {
   it('Test', () => {
+    const fn = () => {//
+    };
     expect(same('', '')).toBeTruthy();
     expect(same(0, 0)).toBeTruthy();
     expect(same(-0, 0)).toBeTruthy();
@@ -29,8 +31,9 @@ describe('@bitfiber/utils/same', () => {
     expect(same(date, date)).toBeTruthy();
     expect(same(/^reg$/, /^reg$/)).toBeFalsy();
     expect(same(reg, reg)).toBeTruthy();
-    expect(same(stub, random)).toBeFalsy();
-    expect(same(stub, stub)).toBeTruthy();
+    expect(same(fn, () => {//
+    })).toBeFalsy();
+    expect(same(fn, fn)).toBeTruthy();
     expect(same(Symbol('sym'), Symbol('sym'))).toBeFalsy();
     expect(same(sym, sym)).toBeTruthy();
   });

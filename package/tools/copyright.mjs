@@ -3,8 +3,8 @@ import {extname} from 'path';
 
 const distFolder = './dist/';
 const currentYear = new Date().getFullYear();
-const copyright = `Copyright (c) 2023${currentYear === 2023 ? ''
-  : `-${currentYear}`} Zmanovskyi Oleksandr. All rights reserved.`;
+const copyright = `Copyright © 2023${currentYear === 2023 ? ''
+  : `-${currentYear}`} Oleksandr Zmanovskyi. All rights reserved.`;
 const licenseUrl = 'https://github.com/bitfiber/utils/blob/main/LICENSE.txt';
 
 const jsCopyrightText = `/*

@@ -1,5 +1,6 @@
-import {isArray, isFunction, isRegExp, isString, isUndefined} from '../../';
-import {BotData, EnvCondition, EnvData, getUserAgent} from '../';
+import {isArray, isFunction, isRegExp, isString, isUndefined} from '../../common';
+import {getUserAgent} from '../';
+import {BotData, EnvCondition, EnvData} from '../types';
 
 /*
  * Functions for internal use
@@ -10,7 +11,7 @@ let bot: BotData | null = null;
 const botConditions: EnvCondition[] = ['googlebot', 'bingbot', 'yandexbot', 'slurp'];
 
 /*
- * @private
+ * @internal
  * For internal use
  */
 export function getBot(): BotData {
@@ -18,7 +19,7 @@ export function getBot(): BotData {
 }
 
 /*
- * @private
+ * @internal
  * For internal use
  */
 export function resetBot(): void {
@@ -26,7 +27,7 @@ export function resetBot(): void {
 }
 
 /*
- * @private
+ * @internal
  * For internal use
  */
 export function getEnvData(conditions: EnvCondition[], needVersion = false): EnvData {

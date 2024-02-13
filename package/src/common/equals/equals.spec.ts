@@ -1,4 +1,4 @@
-import {stub, random, equals} from '../';
+import {equals} from '../';
 
 describe('@bitfiber/utils/equals', () => {
   it('Test', () => {
@@ -10,6 +10,8 @@ describe('@bitfiber/utils/equals', () => {
     const set = new Set([true, [true, 1, {test: [[true]]}], 'str']);
     const map = new Map([[true, [true, 1, {test: [[true]]}]]]);
     const sym = Symbol('sym');
+    const fn = () => {//
+    };
     expect(equals('', '')).toBeTruthy();
     expect(equals(0, 0)).toBeTruthy();
     expect(equals(-0, 0)).toBeTruthy();
@@ -53,8 +55,9 @@ describe('@bitfiber/utils/equals', () => {
       equals(new Set([true, [true, 1, 'str', {test: [[true]]}]]), new Set([true, [true, 1, {test: [[true]]}], 'str'])),
     )
       .toBeFalsy();
-    expect(equals(new Set([true, [true, 1, {test: [[true]]}], 'str2']),
-      new Set([true, [true, 1, {test: [[true]]}], 'str'])))
+    expect(
+      equals(new Set([true, [true, 1, {test: [[true]]}], 'str2']), new Set([true, [true, 1, {test: [[true]]}], 'str'])),
+    )
       .toBeFalsy();
     expect(equals(set, set)).toBeTruthy();
     expect(equals(new Map([[true, [true, 1, {test: [[true]]}]]]), new Map([[true, [true, 1, {test: [[true]]}]]])))
@@ -64,8 +67,9 @@ describe('@bitfiber/utils/equals', () => {
     expect(equals(new Map([[true, [true, 1, {test: [[true]]}]]]), new Map([[false, [true, 1, {test: [[true]]}]]])))
       .toBeFalsy();
     expect(equals(map, map)).toBeTruthy();
-    expect(equals(stub, random)).toBeFalsy();
-    expect(equals(stub, stub)).toBeTruthy();
+    expect(equals(fn, () => {//
+    })).toBeFalsy();
+    expect(equals(fn, fn)).toBeTruthy();
     expect(equals(Symbol('sym'), Symbol('sym'))).toBeFalsy();
     expect(equals(sym, sym)).toBeTruthy();
   });

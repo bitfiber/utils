@@ -1,4 +1,4 @@
-import {isObject, Obj} from '../../';
+import {isObject, Obj} from '../../common';
 import {constant} from '../';
 
 /**

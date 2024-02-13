@@ -104,7 +104,7 @@ export type OSCondition = {[key in OSNames]?: OSBrowsersCondition} & {anyOS?: OS
 export type PlatformsCondition = {[key in PlatformNames]?: OSCondition} & {anyPlatform?: OSCondition};
 
 /*
- * @private
+ * @internal
  * Represents the returned data by the getBot function
  */
 export interface BotData extends VersionData {
@@ -116,7 +116,7 @@ export interface BotData extends VersionData {
 }
 
 /*
- * @private
+ * @internal
  * Represents the returned data by the getEnvData function
  */
 export interface EnvData extends VersionData {
@@ -128,19 +128,19 @@ export interface EnvData extends VersionData {
 }
 
 /*
- * @private
+ * @internal
  * Represents the test type to test for compliance
  */
 export type EnvTest = string | RegExp | (() => boolean);
 
 /*
- * @private
+ * @internal
  * Represents a group of tests
  */
 export type EnvTestGroup = EnvTest | EnvTest[];
 
 /*
- * @private
+ * @internal
  * Represents a set of tests and template for retrieving a version
  */
 export type EnvCondition = string | [string, EnvTestGroup] | [string, EnvTestGroup, string | RegExp];

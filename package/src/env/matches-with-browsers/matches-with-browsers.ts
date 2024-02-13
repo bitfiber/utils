@@ -1,4 +1,4 @@
-import {INTERRUPT, isObject, isString} from '../../';
+import {INTERRUPT, isObject, isString} from '../../common';
 import {forEachObj} from '../../obj';
 import {BrowsersCondition, getEngine, isBrowser, isEngine} from '../';
 

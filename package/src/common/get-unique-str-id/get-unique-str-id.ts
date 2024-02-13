@@ -1,4 +1,4 @@
-import {random} from '../';
+import {random} from '../random/random';
 
 /*
  * Counter for the getUniqueStrId function

@@ -1,4 +1,4 @@
-import {Obj, INTERRUPT, toInt} from '../../';
+import {Obj, INTERRUPT, toInt} from '../../common';
 import {forEachObj} from '../';
 
 describe('@bitfiber/utils/obj/forEachObj', () => {

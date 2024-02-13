@@ -1,4 +1,4 @@
-import {INTERRUPT} from '../../';
+import {INTERRUPT} from '../../common';
 
 /**
  * Iterates through all child nodes of the parent node to the full depth of the tree and calls a handler for each node.

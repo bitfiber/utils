@@ -1,4 +1,5 @@
-import {BrowserData, EnvCondition} from '../';
+import {BrowserData} from '../';
+import {EnvCondition} from '../types';
 import {getBot, getEnvData} from '../private/private';
 
 let browser: BrowserData | null = null;
@@ -25,11 +26,11 @@ const browserConditions: EnvCondition[] = [
 export function getBrowser(): BrowserData {
   const bot = getBot();
   browser ??= bot.name !== 'unknown' ? {...bot} : <BrowserData>getEnvData(browserConditions, true);
-  return browser;
+  return <BrowserData>browser;
 }
 
 /*
- * @private
+ * @internal
  * For internal use
  */
 export function resetBrowser(): void {

@@ -1,4 +1,4 @@
-import {BfError} from '../../';
+import {BfError} from '../../common';
 import {getBody, getDocument, getWindow} from '../';
 
 /**

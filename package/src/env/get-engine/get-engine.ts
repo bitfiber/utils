@@ -1,4 +1,5 @@
-import {EngineData, EnvCondition} from '../';
+import {EngineData} from '../';
+import {EnvCondition} from '../types';
 import {getBot, getEnvData} from '../private/private';
 
 let engine: EngineData | null = null;
@@ -18,7 +19,7 @@ export function getEngine(): EngineData {
 }
 
 /*
- * @private
+ * @internal
  * For internal use
  */
 export function resetEngine(): void {

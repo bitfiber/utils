@@ -1,4 +1,4 @@
-import {Obj} from '../../';
+import {Obj} from '../../common';
 
 /**
  * Returns an array with values, each of which corresponds to the value of a certain array item field

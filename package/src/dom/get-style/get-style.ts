@@ -1,4 +1,4 @@
-import {Index} from '../../';
+import {Index} from '../../common';
 import {getValidStyleName, getAllStyles} from '../';
 
 const validStyleValues: Index<[string, string]> = {

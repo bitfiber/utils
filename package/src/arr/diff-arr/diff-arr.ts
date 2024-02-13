@@ -1,5 +1,30 @@
-import {NumStr} from '../../';
-import {ArrDiff} from '../';
+import {NumStr} from '../../common';
+
+/**
+ * Represents response of the diffArr function
+ */
+export interface ArrDiff<T> {
+
+  /**
+   * Contains items that are only in array 1
+   */
+  only1: T[];
+
+  /**
+   * Contains items that are only in array 2
+   */
+  only2: T[];
+
+  /**
+   * Contains items that are in both arrays
+   */
+  equal: T[];
+
+  /**
+   * True if only1 and only2 are empty, otherwise false
+   */
+  isEqual: boolean;
+}
 
 /**
  * Returns the difference between two arrays

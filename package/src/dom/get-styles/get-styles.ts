@@ -1,4 +1,4 @@
-import {ValueUnion} from '../../';
+import {ValueUnion} from '../../common';
 import {getStyle} from '../';
 
 /**

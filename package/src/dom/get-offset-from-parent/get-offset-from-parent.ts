@@ -1,4 +1,4 @@
-import {BfError, toFloat} from '../../';
+import {BfError, toFloat} from '../../common';
 import {Offset, hasName, getNonStaticParent, getOffsetFromWin, getOffsetFromDoc, getStyle} from '../';
 
 /**

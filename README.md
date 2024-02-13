@@ -84,7 +84,7 @@ By participating, you are expected to uphold this code.
 This project is released under the Apache 2.0 License.  
 You can find the full text of the license in the [LICENSE](https://github.com/bitfiber/utils/blob/main/LICENSE.txt)
 file.  
-Copyright © 2023-2024 Zmanovskyi Oleksandr. All rights reserved.
+Copyright © 2023-2024 Oleksandr Zmanovskyi. All rights reserved.
 
 ---
 

@@ -1,4 +1,4 @@
-import {BfError, Index} from '../../';
+import {BfError, Index} from '../../common';
 import {withCapital, toCamelCase} from '../../str';
 import {getDocument} from '../';
 

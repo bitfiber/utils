@@ -1,4 +1,4 @@
-import {isFunction, Obj, Index} from '../../';
+import {isFunction, Obj, Index} from '../../common';
 
 /**
  * Returns an object indexed by the values from a specific field of each item

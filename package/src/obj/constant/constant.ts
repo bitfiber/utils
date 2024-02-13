@@ -1,4 +1,4 @@
-import {Obj} from '../../';
+import {Obj} from '../../common';
 
 /**
  * Makes an object read-only

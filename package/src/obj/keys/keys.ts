@@ -1,4 +1,4 @@
-import {Obj} from '../../';
+import {Obj} from '../../common';
 
 /**
  * Returns an array of the object's own enumerable property names

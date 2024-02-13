@@ -10,7 +10,8 @@
         "commands": [
           "nx lint utils",
           "nx test utils",
-          "nx build-lib utils"
+          "nx build-lib utils",
+          "nx copy-to-dist utils"
         ],
         "parallel": false
       }
@@ -20,10 +21,10 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "rootDir": "package/src",
-        "outputPath": "dist/utils",
+        "outputPath": "package/dist",
         "main": "package/src/index.ts",
         "tsConfig": "package/tsconfig.lib.json",
-        "assets": ["*.md", "LICENSE.txt"],
+        "assets": [],
         "additionalEntryPoints": [
           "package/src/arr/index.ts",
           "package/src/obj/index.ts",
@@ -32,6 +33,12 @@
           "package/src/dom/index.ts",
           "package/src/env/index.ts"
         ]
+      }
+    },
+    "copy-to-dist": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node package/tools/copy-to-dist.mjs"
       }
     },
     "copyright": {

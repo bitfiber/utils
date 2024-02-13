@@ -1,4 +1,4 @@
-import {INTERRUPT} from '../../';
+import {INTERRUPT} from '../../common';
 import {exclude, forEachObj} from '../../obj';
 import {getPlatform, isOS, matchesWithBrowsers, PlatformsCondition} from '../';
 

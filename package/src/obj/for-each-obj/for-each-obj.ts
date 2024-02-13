@@ -1,4 +1,4 @@
-import {Obj, INTERRUPT, ValueUnion} from '../../';
+import {Obj, INTERRUPT, ValueUnion} from '../../common';
 import {hasOwn} from '../';
 
 /**

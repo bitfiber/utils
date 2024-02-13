@@ -5,8 +5,11 @@
 import {
   isNaN, isArray, isArrayBuffer, isBigInt, isBlob, isBoolean, isDate, isDefined, isDocument, isFile, isFormData,
   isFunction, isMap, isNull, isNumber, isObject, isObservable, isPromise, isRegExp, isSet, isString, isSymbol,
-  isTypedArray, isUndefined, isUsualObject, isWindow, stub,
+  isTypedArray, isUndefined, isUsualObject, isWindow,
 } from '../';
+
+function fn() {//
+}
 
 describe('@bitfiber/utils/common/is', () => {
   it('isNull', () => {
@@ -20,7 +23,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isNull(false)).toBeFalsy();
     expect(isNull([])).toBeFalsy();
     expect(isNull({})).toBeFalsy();
-    expect(isNull(stub)).toBeFalsy();
+    expect(isNull(fn)).toBeFalsy();
     expect(isNull(Symbol('sym'))).toBeFalsy();
   });
 
@@ -35,7 +38,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isNaN(false)).toBeFalsy();
     expect(isNaN([])).toBeFalsy();
     expect(isNaN({})).toBeFalsy();
-    expect(isNaN(stub)).toBeFalsy();
+    expect(isNaN(fn)).toBeFalsy();
     expect(isNaN(Symbol('sym'))).toBeFalsy();
   });
 
@@ -50,7 +53,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isUndefined(false)).toBeFalsy();
     expect(isUndefined([])).toBeFalsy();
     expect(isUndefined({})).toBeFalsy();
-    expect(isUndefined(stub)).toBeFalsy();
+    expect(isUndefined(fn)).toBeFalsy();
     expect(isUndefined(Symbol('sym'))).toBeFalsy();
   });
 
@@ -65,7 +68,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isDefined(false)).toBeTruthy();
     expect(isDefined([])).toBeTruthy();
     expect(isDefined({})).toBeTruthy();
-    expect(isDefined(stub)).toBeTruthy();
+    expect(isDefined(fn)).toBeTruthy();
     expect(isDefined(Symbol('sym'))).toBeTruthy();
   });
 
@@ -80,7 +83,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isString(false)).toBeFalsy();
     expect(isString([])).toBeFalsy();
     expect(isString({})).toBeFalsy();
-    expect(isString(stub)).toBeFalsy();
+    expect(isString(fn)).toBeFalsy();
     expect(isString(Symbol('sym'))).toBeFalsy();
   });
 
@@ -95,7 +98,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isNumber(false)).toBeFalsy();
     expect(isNumber([])).toBeFalsy();
     expect(isNumber({})).toBeFalsy();
-    expect(isNumber(stub)).toBeFalsy();
+    expect(isNumber(fn)).toBeFalsy();
     expect(isNumber(Symbol('sym'))).toBeFalsy();
   });
 
@@ -110,7 +113,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isBigInt(false)).toBeFalsy();
     expect(isBigInt([])).toBeFalsy();
     expect(isBigInt({})).toBeFalsy();
-    expect(isBigInt(stub)).toBeFalsy();
+    expect(isBigInt(fn)).toBeFalsy();
     expect(isBigInt(Symbol('sym'))).toBeFalsy();
 
     // expect(isBigInt(1n)).toBeTruthy(); // BigInt literals are not available when targeting lower than ES2020
@@ -127,7 +130,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isBoolean(false)).toBeTruthy();
     expect(isBoolean([])).toBeFalsy();
     expect(isBoolean({})).toBeFalsy();
-    expect(isBoolean(stub)).toBeFalsy();
+    expect(isBoolean(fn)).toBeFalsy();
     expect(isBoolean(Symbol('sym'))).toBeFalsy();
   });
 
@@ -142,7 +145,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isSymbol(false)).toBeFalsy();
     expect(isSymbol([])).toBeFalsy();
     expect(isSymbol({})).toBeFalsy();
-    expect(isSymbol(stub)).toBeFalsy();
+    expect(isSymbol(fn)).toBeFalsy();
     expect(isSymbol(Symbol('sym'))).toBeTruthy();
   });
 
@@ -157,7 +160,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isFunction(false)).toBeFalsy();
     expect(isFunction([])).toBeFalsy();
     expect(isFunction({})).toBeFalsy();
-    expect(isFunction(stub)).toBeTruthy();
+    expect(isFunction(fn)).toBeTruthy();
     expect(isFunction(Symbol('sym'))).toBeFalsy();
   });
 
@@ -174,7 +177,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isObject({})).toBeTruthy();
     expect(isObject(new Date())).toBeTruthy();
     expect(isObject(/^reg$/)).toBeTruthy();
-    expect(isObject(stub)).toBeFalsy();
+    expect(isObject(fn)).toBeFalsy();
     expect(isObject(Symbol('sym'))).toBeFalsy();
   });
 
@@ -189,7 +192,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isArray(false)).toBeFalsy();
     expect(isArray([])).toBeTruthy();
     expect(isArray({})).toBeFalsy();
-    expect(isArray(stub)).toBeFalsy();
+    expect(isArray(fn)).toBeFalsy();
     expect(isArray(Symbol('sym'))).toBeFalsy();
   });
 
@@ -204,7 +207,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isSet(false)).toBeFalsy();
     expect(isSet([])).toBeFalsy();
     expect(isSet({})).toBeFalsy();
-    expect(isSet(stub)).toBeFalsy();
+    expect(isSet(fn)).toBeFalsy();
     expect(isSet(Symbol('sym'))).toBeFalsy();
     expect(isSet(new Set())).toBeTruthy();
   });
@@ -220,7 +223,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isMap(false)).toBeFalsy();
     expect(isMap([])).toBeFalsy();
     expect(isMap({})).toBeFalsy();
-    expect(isMap(stub)).toBeFalsy();
+    expect(isMap(fn)).toBeFalsy();
     expect(isMap(Symbol('sym'))).toBeFalsy();
     expect(isMap(new Map())).toBeTruthy();
   });
@@ -236,7 +239,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isDate(false)).toBeFalsy();
     expect(isDate([])).toBeFalsy();
     expect(isDate({})).toBeFalsy();
-    expect(isDate(stub)).toBeFalsy();
+    expect(isDate(fn)).toBeFalsy();
     expect(isDate(Symbol('sym'))).toBeFalsy();
     expect(isDate(new Date())).toBeTruthy();
   });
@@ -252,7 +255,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isRegExp(false)).toBeFalsy();
     expect(isRegExp([])).toBeFalsy();
     expect(isRegExp({})).toBeFalsy();
-    expect(isRegExp(stub)).toBeFalsy();
+    expect(isRegExp(fn)).toBeFalsy();
     expect(isRegExp(Symbol('sym'))).toBeFalsy();
     expect(isRegExp(/^reg$/)).toBeTruthy();
   });
@@ -268,7 +271,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isFile(false)).toBeFalsy();
     expect(isFile([])).toBeFalsy();
     expect(isFile({})).toBeFalsy();
-    expect(isFile(stub)).toBeFalsy();
+    expect(isFile(fn)).toBeFalsy();
     expect(isFile(Symbol('sym'))).toBeFalsy();
     expect(isFile(new File([new Blob()], 'name'))).toBeTruthy();
   });
@@ -284,7 +287,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isBlob(false)).toBeFalsy();
     expect(isBlob([])).toBeFalsy();
     expect(isBlob({})).toBeFalsy();
-    expect(isBlob(stub)).toBeFalsy();
+    expect(isBlob(fn)).toBeFalsy();
     expect(isBlob(Symbol('sym'))).toBeFalsy();
     expect(isBlob(new Blob())).toBeTruthy();
   });
@@ -300,7 +303,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isFormData(false)).toBeFalsy();
     expect(isFormData([])).toBeFalsy();
     expect(isFormData({})).toBeFalsy();
-    expect(isFormData(stub)).toBeFalsy();
+    expect(isFormData(fn)).toBeFalsy();
     expect(isFormData(Symbol('sym'))).toBeFalsy();
     expect(isFormData(new FormData())).toBeTruthy();
   });
@@ -316,7 +319,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isArrayBuffer(false)).toBeFalsy();
     expect(isArrayBuffer([])).toBeFalsy();
     expect(isArrayBuffer({})).toBeFalsy();
-    expect(isArrayBuffer(stub)).toBeFalsy();
+    expect(isArrayBuffer(fn)).toBeFalsy();
     expect(isArrayBuffer(Symbol('sym'))).toBeFalsy();
     expect(isArrayBuffer(new ArrayBuffer(8))).toBeTruthy();
   });
@@ -332,7 +335,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isDocument(false)).toBeFalsy();
     expect(isDocument([])).toBeFalsy();
     expect(isDocument({})).toBeFalsy();
-    expect(isDocument(stub)).toBeFalsy();
+    expect(isDocument(fn)).toBeFalsy();
     expect(isDocument(Symbol('sym'))).toBeFalsy();
     expect(isDocument(document)).toBeTruthy();
   });
@@ -348,7 +351,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isWindow(false)).toBeFalsy();
     expect(isWindow([])).toBeFalsy();
     expect(isWindow({})).toBeFalsy();
-    expect(isWindow(stub)).toBeFalsy();
+    expect(isWindow(fn)).toBeFalsy();
     expect(isWindow(Symbol('sym'))).toBeFalsy();
     expect(isWindow(window)).toBeTruthy();
   });
@@ -364,9 +367,9 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isPromise(false)).toBeFalsy();
     expect(isPromise([])).toBeFalsy();
     expect(isPromise({})).toBeFalsy();
-    expect(isPromise(stub)).toBeFalsy();
+    expect(isPromise(fn)).toBeFalsy();
     expect(isPromise(Symbol('sym'))).toBeFalsy();
-    expect(isPromise(new Promise(stub))).toBeTruthy();
+    expect(isPromise(new Promise(fn))).toBeTruthy();
   });
 
   it('isObservable', () => {
@@ -380,7 +383,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isObservable(false)).toBeFalsy();
     expect(isObservable([])).toBeFalsy();
     expect(isObservable({})).toBeFalsy();
-    expect(isObservable(stub)).toBeFalsy();
+    expect(isObservable(fn)).toBeFalsy();
     expect(isObservable(Symbol('sym'))).toBeFalsy();
     expect(isObservable({
       pipe: () => true,
@@ -399,7 +402,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isTypedArray(false)).toBeFalsy();
     expect(isTypedArray([])).toBeFalsy();
     expect(isTypedArray({})).toBeFalsy();
-    expect(isTypedArray(stub)).toBeFalsy();
+    expect(isTypedArray(fn)).toBeFalsy();
     expect(isTypedArray(Symbol('sym'))).toBeFalsy();
     expect(isTypedArray(new Int8Array())).toBeTruthy();
     expect(isTypedArray(new Int16Array())).toBeTruthy();
@@ -426,7 +429,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isUsualObject(false)).toBeFalsy();
     expect(isUsualObject([])).toBeFalsy();
     expect(isUsualObject({})).toBeTruthy();
-    expect(isUsualObject(stub)).toBeFalsy();
+    expect(isUsualObject(fn)).toBeFalsy();
     expect(isUsualObject(Symbol('sym'))).toBeFalsy();
     expect(isUsualObject(new Set())).toBeFalsy();
     expect(isUsualObject(new Map())).toBeFalsy();
@@ -438,7 +441,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isUsualObject(new ArrayBuffer(8))).toBeFalsy();
     expect(isUsualObject(document)).toBeFalsy();
     expect(isUsualObject(window)).toBeFalsy();
-    expect(isUsualObject(new Promise(stub))).toBeFalsy();
+    expect(isUsualObject(new Promise(fn))).toBeFalsy();
     expect(isUsualObject({
       pipe: () => true,
       subscribe: () => true,

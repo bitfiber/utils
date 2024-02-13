@@ -1,4 +1,5 @@
-import {EnvCondition, getOS, PlatformNames} from '../';
+import {getOS, PlatformNames} from '../';
+import {EnvCondition} from '../types';
 import {getBot, getEnvData} from '../private/private';
 
 let platform: PlatformNames | null = null;
@@ -21,11 +22,11 @@ const platformConditions: EnvCondition[] = [
 export function getPlatform(): PlatformNames {
   const bot = getBot();
   platform ??= bot.name !== 'unknown' ? bot.name : <PlatformNames>getEnvData(platformConditions).name;
-  return platform;
+  return <PlatformNames>platform;
 }
 
 /*
- * @private
+ * @internal
  * For internal use
  */
 export function resetPlatform(): void {

@@ -1,4 +1,4 @@
-import {BfError} from '../../';
+import {BfError} from '../../common';
 
 let doc = typeof document === 'object' ? document : undefined;
 

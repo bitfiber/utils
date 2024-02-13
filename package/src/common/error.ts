@@ -1,4 +1,10 @@
-import {BfErrorOptions} from './';
+/**
+ * Represents additional error options the BfError class
+ */
+export interface BfErrorOptions {
+  code?: string;
+  data?: any;
+}
 
 /**
  * Extends the Error class and adds additional parameters: date, code, data

@@ -1,4 +1,4 @@
-import {INTERRUPT} from '../../';
+import {INTERRUPT} from '../../common';
 import {forEachArr} from '../../arr';
 
 /**

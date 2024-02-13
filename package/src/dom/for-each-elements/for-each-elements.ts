@@ -1,4 +1,4 @@
-import {forEach, INTERRUPT} from '../../';
+import {forEach, INTERRUPT} from '../../common';
 
 /**
  * Iterates through all child elements of the parent element to the full depth of the tree

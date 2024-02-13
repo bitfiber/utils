@@ -1,4 +1,7 @@
-import {resetBrowser, resetEngine, resetOS, resetPlatform} from '../';
+import {resetBrowser} from '../get-browser/get-browser';
+import {resetEngine} from '../get-engine/get-engine';
+import {resetOS} from '../get-os/get-os';
+import {resetPlatform} from '../get-platform/get-platform';
 import {resetBot} from '../private/private';
 
 let agent = typeof navigator === 'object' ? navigator.userAgent : '';

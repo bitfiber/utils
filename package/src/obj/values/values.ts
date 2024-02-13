@@ -1,4 +1,4 @@
-import {Obj} from '../../';
+import {Obj} from '../../common';
 import {forEachObj} from '../';
 
 /**

@@ -1,4 +1,4 @@
-import {isNumber, toFloat} from '../../';
+import {isNumber, toFloat} from '../../common';
 import {TopLeft, getOffsetFromParent, setStyle, getStyle, setStyles} from '../';
 
 /**

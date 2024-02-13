@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import {INTERRUPT} from '../../';
+import {INTERRUPT} from '../../common';
 import {getDocument, forEachElements, isElement, hasName, isText, isComment} from '../';
 
 describe('@bitfiber/utils/dom/forEachNodes', () => {

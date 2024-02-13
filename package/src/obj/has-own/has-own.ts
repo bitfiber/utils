@@ -1,4 +1,4 @@
-import {Obj, NumStrSym} from '../../';
+import {Obj, NumStrSym} from '../../common';
 
 /**
  * Returns true if the object has the indicated property as its own property.

@@ -1,4 +1,4 @@
-import {Arr, INTERRUPT, NumStr, toInt} from '../../';
+import {Arr, INTERRUPT, NumStr, toInt} from '../../common';
 import {forEachArr} from '../';
 
 describe('@bitfiber/utils/arr/forEachArr', () => {

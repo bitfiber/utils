@@ -1,4 +1,5 @@
-import {EnvCondition, OSData} from '../';
+import {OSData} from '../';
+import {EnvCondition} from '../types';
 import {getBot, getEnvData} from '../private/private';
 
 let os: OSData | null = null;
@@ -22,7 +23,7 @@ export function getOS(): OSData {
 }
 
 /*
- * @private
+ * @internal
  * For internal use
  */
 export function resetOS(): void {

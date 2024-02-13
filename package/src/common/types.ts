@@ -64,16 +64,3 @@ export type ValueUnion<T extends ArrObj, K extends keyof T = keyof T> = T extend
  * Represents the intersection of object value types or array value types
  */
 export type ValueIntersection<T extends ArrObj> = UnionToIntersection<ValueUnion<T>>;
-
-/**
- * Represents additional error options the BfError class
- */
-export interface BfErrorOptions {
-  code?: string;
-  data?: any;
-}
-
-/**
- * This symbol is used in forEach handlers to interrupt the loop
- */
-export const INTERRUPT = Symbol('Symbol.INTERRUPT');

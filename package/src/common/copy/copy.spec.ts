@@ -2,7 +2,10 @@
  * @jest-environment jsdom
  */
 
-import {stub, copy, isArray, isTypedArray, isUsualObject, isDate, isRegExp, isSet, isMap} from '../';
+import {copy, isArray, isTypedArray, isUsualObject, isDate, isRegExp, isSet, isMap} from '../';
+
+function fn() {//
+}
 
 describe('@bitfiber/utils/copy', () => {
   it('Test', () => {
@@ -47,7 +50,7 @@ describe('@bitfiber/utils/copy', () => {
     expect(isMap(copy(map))).toBeTruthy();
     expect(copy(map) !== map).toBeTruthy();
     expect(copy(map)).toEqual(map);
-    expect(copy(stub)).toBe(stub);
+    expect(copy(fn)).toBe(fn);
     expect(copy(sym)).toBe(sym);
   });
 });

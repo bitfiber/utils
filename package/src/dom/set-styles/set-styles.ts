@@ -1,4 +1,4 @@
-import {Index} from '../../';
+import {Index} from '../../common';
 import {forEachObj} from '../../obj';
 import {setStyle} from '../';
 

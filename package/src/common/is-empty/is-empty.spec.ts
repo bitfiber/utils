@@ -1,4 +1,4 @@
-import {stub, isEmpty} from '../';
+import {isEmpty} from '../';
 
 describe('@bitfiber/utils/isEmpty', () => {
   it('Test', () => {
@@ -31,7 +31,8 @@ describe('@bitfiber/utils/isEmpty', () => {
     expect(isEmpty(new Map([[undefined, undefined]]))).toBeFalsy();
     expect(isEmpty(new Map([[0, 0]]))).toBeFalsy();
     expect(isEmpty(/^reg$/)).toBeFalsy();
-    expect(isEmpty(stub)).toBeFalsy();
+    expect(isEmpty(() => {//
+    })).toBeFalsy();
     expect(isEmpty(Symbol('sym'))).toBeFalsy();
   });
 });

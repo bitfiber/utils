@@ -1,4 +1,4 @@
-import {Arr, INTERRUPT, ValueUnion} from '../../';
+import {Arr, INTERRUPT, ValueUnion} from '../../common';
 
 /**
  * Iterates through all the items of an array and calls a handler for each item

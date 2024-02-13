@@ -1,4 +1,4 @@
-import {copy, isDefined, isUsualObject, Obj, ValueIntersection} from '../../';
+import {copy, isDefined, isUsualObject, Obj, ValueIntersection} from '../../common';
 import {forEachObj} from '../';
 
 /**

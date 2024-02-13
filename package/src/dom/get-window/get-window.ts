@@ -1,4 +1,4 @@
-import {BfError} from '../../';
+import {BfError} from '../../common';
 import {getDocument} from '../';
 
 let win = typeof window === 'object' ? window : undefined;

@@ -1,4 +1,7 @@
-import {stub, toSortedString} from '../';
+import {toSortedString} from '../';
+
+function fn() {//
+}
 
 describe('@bitfiber/utils/toSortedString', () => {
   it('Test', () => {
@@ -35,6 +38,6 @@ describe('@bitfiber/utils/toSortedString', () => {
     })).toBeTruthy();
     expect(toSortedString(new Date(1607300542000))).toMatch('2020');
     expect(toSortedString(/^reg$/)).toBe('/^reg$/');
-    expect(toSortedString(stub)).toMatch('stub');
+    expect(toSortedString(fn)).toMatch('fn');
   });
 });
