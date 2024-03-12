@@ -1,45 +1,66 @@
 {
   "name": "@bitfiber/utils",
   "description": "Collection of versatile utility functions for Javascript",
-  "version": "1.0.3",
-  "type": "module",
-  "module": "./dist/index.js",
-  "main": "./dist/index.js",
+  "version": "1.0.4",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "es2015": "./dist/esm/index.js",
   "types": "index.d.ts",
   "typesVersions": {
     ">=4.8.2": {
-      "*": ["dist/*"]
+      "*": ["dist/types/*"]
     }
   },
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/types/index.d.ts",
+      "node": "./dist/cjs/index.js",
+      "require": "./dist/cjs/index.js",
+      "es2015": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
     },
     "./arr": {
-      "types": "./dist/arr/index.d.ts",
-      "default": "./dist/arr/index.js"
+      "types": "./dist/types/arr/index.d.ts",
+      "node": "./dist/cjs/arr/index.js",
+      "require": "./dist/cjs/arr/index.js",
+      "es2015": "./dist/esm/arr/index.js",
+      "default": "./dist/esm/arr/index.js"
     },
     "./obj": {
-      "types": "./dist/obj/index.d.ts",
-      "default": "./dist/obj/index.js"
+      "types": "./dist/types/obj/index.d.ts",
+      "node": "./dist/cjs/obj/index.js",
+      "require": "./dist/cjs/obj/index.js",
+      "es2015": "./dist/esm/obj/index.js",
+      "default": "./dist/esm/obj/index.js"
     },
     "./str": {
-      "types": "./dist/str/index.d.ts",
-      "default": "./dist/str/index.js"
+      "types": "./dist/types/str/index.d.ts",
+      "node": "./dist/cjs/str/index.js",
+      "require": "./dist/cjs/str/index.js",
+      "es2015": "./dist/esm/str/index.js",
+      "default": "./dist/esm/str/index.js"
     },
     "./num": {
-      "types": "./dist/num/index.d.ts",
-      "default": "./dist/num/index.js"
+      "types": "./dist/types/num/index.d.ts",
+      "node": "./dist/cjs/num/index.js",
+      "require": "./dist/cjs/num/index.js",
+      "es2015": "./dist/esm/num/index.js",
+      "default": "./dist/esm/num/index.js"
     },
     "./dom": {
-      "types": "./dist/dom/index.d.ts",
-      "default": "./dist/dom/index.js"
+      "types": "./dist/types/dom/index.d.ts",
+      "node": "./dist/cjs/dom/index.js",
+      "require": "./dist/cjs/dom/index.js",
+      "es2015": "./dist/esm/dom/index.js",
+      "default": "./dist/esm/dom/index.js"
     },
     "./env": {
-      "types": "./dist/env/index.d.ts",
-      "default": "./dist/env/index.js"
+      "types": "./dist/types/env/index.d.ts",
+      "node": "./dist/cjs/env/index.js",
+      "require": "./dist/cjs/env/index.js",
+      "es2015": "./dist/esm/env/index.js",
+      "default": "./dist/esm/env/index.js"
     },
     "./package.json": "./package.json"
   },

@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getStyle, setStyle} from '../';
 
 describe('@bitfiber/utils/dom/setStyle', () => {

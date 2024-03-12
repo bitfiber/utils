@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {INTERRUPT} from '../../common';
 import {getDocument, forEachNodes, isElement, hasName, isText, isComment} from '../';
 

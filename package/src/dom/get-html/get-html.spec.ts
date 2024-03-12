@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getHtml, hasName} from '../';
 
 describe('@bitfiber/utils/dom/getHtml', () => {

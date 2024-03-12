@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getValidStyleName} from '../';
 
 describe('@bitfiber/utils/dom/getValidStyleName', () => {

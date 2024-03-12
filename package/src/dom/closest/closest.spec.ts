@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getDocument, closest} from '../';
 
 describe('@bitfiber/utils/dom/closest', () => {

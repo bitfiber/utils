@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getWindow} from '../';
 
 describe('@bitfiber/utils/dom/getWindow', () => {

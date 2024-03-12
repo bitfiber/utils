@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getDocument, isElement} from '../';
 
 describe('@bitfiber/utils/dom/isElement', () => {

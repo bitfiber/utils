@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getDocument, getNonStaticParent, hasName} from '../';
 
 describe('@bitfiber/utils/dom/getNonStaticParent', () => {

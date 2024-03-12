@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {
   isNaN, isArray, isArrayBuffer, isBigInt, isBlob, isBoolean, isDate, isDefined, isDocument, isFile, isFormData,
   isFunction, isMap, isNull, isNumber, isObject, isObservable, isPromise, isRegExp, isSet, isString, isSymbol,
@@ -386,8 +382,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isObservable(fn)).toBeFalsy();
     expect(isObservable(Symbol('sym'))).toBeFalsy();
     expect(isObservable({
-      pipe: () => true,
-      subscribe: () => true,
+      pipe: () => true, subscribe: () => true,
     })).toBeTruthy();
   });
 
@@ -443,8 +438,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isUsualObject(window)).toBeFalsy();
     expect(isUsualObject(new Promise(fn))).toBeFalsy();
     expect(isUsualObject({
-      pipe: () => true,
-      subscribe: () => true,
+      pipe: () => true, subscribe: () => true,
     })).toBeFalsy();
     expect(isUsualObject(new Int32Array())).toBeFalsy();
     expect(isUsualObject(new Float64Array())).toBeFalsy();

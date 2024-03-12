@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getBody, hasName} from '../';
 
 describe('@bitfiber/utils/dom/getBody', () => {

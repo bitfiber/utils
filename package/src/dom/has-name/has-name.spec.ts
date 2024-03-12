@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getDocument, hasName} from '../';
 
 describe('@bitfiber/utils/dom/isText', () => {

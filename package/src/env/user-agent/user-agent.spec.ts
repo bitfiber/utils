@@ -1,8 +1,8 @@
 import {getUserAgent, setUserAgent} from './user-agent';
 
 describe('@bitfiber/utils/env/userAgent', () => {
-  it('User agent is empty', () => {
-    expect(getUserAgent()).toBe('');
+  it('User agent is not empty', () => {
+    expect(!!getUserAgent()).toBeTruthy();
   });
 
   it('User agent is not empty', () => {

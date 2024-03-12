@@ -15,7 +15,9 @@ cpSync(packageSrcFolder, distSrcFolder, {recursive: true});
 
 cpSync(packageDistFolder, distDistFolder, {recursive: true});
 rmdirSync(packageDistFolder, {recursive: true});
-rmSync(`${distDistFolder}package.json`);
+rmSync(`${distDistFolder}/esm/package.json`);
+rmSync(`${distDistFolder}/cjs/package.json`);
+rmSync(`${distDistFolder}/types/package.json`);
 removeSpecFiles(distSrcFolder);
 
 cpSync('./LICENSE.txt', `${distFolder}LICENSE.txt`);

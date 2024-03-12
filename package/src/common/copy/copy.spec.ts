@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {copy, isArray, isTypedArray, isUsualObject, isDate, isRegExp, isSet, isMap} from '../';
 
 function fn() {//

@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {getStyles} from '../';
 
 describe('@bitfiber/utils/dom/getStyles', () => {
@@ -18,8 +14,7 @@ describe('@bitfiber/utils/dom/getStyles', () => {
     const styles = getStyles(element, 'width', 'height');
     expect(styles)
       .toEqual({
-        width: '100px',
-        height: '5px',
+        width: '100px', height: '5px',
       });
   });
 

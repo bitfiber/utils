@@ -10,20 +10,60 @@
         "commands": [
           "nx lint utils",
           "nx test utils",
-          "nx build-lib utils",
+          "nx build-esm utils",
+          "nx build-cjs utils",
+          "nx build-types utils",
           "nx copy-to-dist utils"
         ],
         "parallel": false
       }
     },
-    "build-lib": {
+    "build-esm": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "rootDir": "package/src",
-        "outputPath": "package/dist",
+        "outputPath": "package/dist/esm",
         "main": "package/src/index.ts",
-        "tsConfig": "package/tsconfig.lib.json",
+        "tsConfig": "package/tsconfig.esm.json",
+        "assets": [],
+        "additionalEntryPoints": [
+          "package/src/arr/index.ts",
+          "package/src/obj/index.ts",
+          "package/src/str/index.ts",
+          "package/src/num/index.ts",
+          "package/src/dom/index.ts",
+          "package/src/env/index.ts"
+        ]
+      }
+    },
+    "build-cjs": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "rootDir": "package/src",
+        "outputPath": "package/dist/cjs",
+        "main": "package/src/index.ts",
+        "tsConfig": "package/tsconfig.cjs.json",
+        "assets": [],
+        "additionalEntryPoints": [
+          "package/src/arr/index.ts",
+          "package/src/obj/index.ts",
+          "package/src/str/index.ts",
+          "package/src/num/index.ts",
+          "package/src/dom/index.ts",
+          "package/src/env/index.ts"
+        ]
+      }
+    },
+    "build-types": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "rootDir": "package/src",
+        "outputPath": "package/dist/types",
+        "main": "package/src/index.ts",
+        "tsConfig": "package/tsconfig.types.json",
         "assets": [],
         "additionalEntryPoints": [
           "package/src/arr/index.ts",

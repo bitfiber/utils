@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import {downloadFile, getWindow} from '../';
 
 describe('@bitfiber/utils/dom/downloadFile', () => {
@@ -10,8 +6,7 @@ describe('@bitfiber/utils/dom/downloadFile', () => {
     const mockData = new Blob();
     const mockBlobPromise = Promise.resolve(mockData);
     const mockFetchPromise = Promise.resolve<Response>(<any>{
-      ok: true,
-      blob: () => mockBlobPromise,
+      ok: true, blob: () => mockBlobPromise,
     });
 
     win.fetch = jest.fn(() => mockFetchPromise);
@@ -28,9 +23,7 @@ describe('@bitfiber/utils/dom/downloadFile', () => {
   it('Handles errors when fetching data', async () => {
     const win = getWindow();
     const mockFetchPromise = Promise.resolve<Response>(<any>{
-      ok: false,
-      status: 404,
-      statusText: 'Not Found',
+      ok: false, status: 404, statusText: 'Not Found',
     });
 
     win.fetch = jest.fn(() => mockFetchPromise);
