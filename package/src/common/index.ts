@@ -1,6 +1,6 @@
 export {
   Nullish, NumStr, NumStrSym, Fn, Arr, TypedArr, Obj, Index, ArrObj, UnionToIntersection,
-  ValueUnion, ValueIntersection,
+  ValueUnion, ValueIntersection, OmitType, PickType,
 } from './types';
 export {INTERRUPT} from './interrupt';
 export {BfError, BfErrorOptions} from './error';
