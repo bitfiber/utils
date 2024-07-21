@@ -1,4 +1,4 @@
-import {NumStr, isString, isDate, isRegExp, isFunction, isMap, isSet, isObject, isArray, isTypedArray} from '../';
+import {isDate, isRegExp, isFunction, isMap, isSet, isObject, isArray, isTypedArray} from '../';
 
 /**
  * Converts any value to a sorted string.
@@ -7,18 +7,17 @@ import {NumStr, isString, isDate, isRegExp, isFunction, isMap, isSet, isObject, 
  * @param value - anything
  */
 export function toSortedString(value: any): string {
-  return _toSortedString(value, null, 0, new Map<any, true>());
+  return _toSortedString(value, new Map<any, true>());
 }
 
-function _toSortedString(value: any, index: number | null, field: NumStr, visited: Map<any, true>): string {
-  let str = index === null ? '' : ((index === 0 ? '' : ',') + (isString(field) ? field + ':' : ''));
+function _toSortedString(value: any, visited: Map<any, true>): string {
+  let str = '';
 
   if (isMap(value) || isSet(value)) {
     if (visited.has(value)) {
       return '';
     }
     visited.set(value, true);
-
     value = Array.from(value);
   }
 
@@ -26,13 +25,13 @@ function _toSortedString(value: any, index: number | null, field: NumStr, visite
     if (visited.has(value)) {
       return '';
     }
+    const arr: string[] = [];
     visited.set(value, true);
-
     str += '[';
-    value.sort();
-    value.forEach((value: any, i: number) => {
-      str += _toSortedString(value, i, i, visited);
+    value.forEach(item => {
+      arr.push(_toSortedString(item, visited));
     });
+    str = arr.sort().reduce((acc, item, i) => `${acc}${item}${i < arr.length - 1 ? ',' : ''}`, str);
     str += ']';
   } else if (isFunction(value)) {
     str += value.toString();
@@ -40,14 +39,13 @@ function _toSortedString(value: any, index: number | null, field: NumStr, visite
     if (visited.has(value)) {
       return '';
     }
+    const fields = Object.keys(value).sort();
     visited.set(value, true);
-
-    const fields = Object.keys(value);
-
     str += '{';
-    fields.sort();
     fields.forEach((field, i) => {
-      str += _toSortedString(value[field], i, field, visited);
+      str += `${field}:${_toSortedString(value[field], visited)}${i < fields.length - 1
+        ? ','
+        : ''}`;
     });
     str += '}';
   } else {

@@ -1,13 +1,15 @@
 export {
-  Nullish, NumStr, NumStrSym, Fn, Arr, TypedArr, Obj, Index, ArrObj, UnionToIntersection, ValueUnion, ValueIntersection,
+  Nullish, NumStr, NumStrSym, Fn, Arr, TypedArr, Obj, Index, ArrObj, UnionToIntersection,
+  ValueUnion, ValueIntersection,
 } from './types';
 export {INTERRUPT} from './interrupt';
 export {BfError, BfErrorOptions} from './error';
 export {stub} from './stub/stub';
 export {
-  isNull, isUndefined, isDefined, isNullish, isNaN, isString, isNumber, isBigInt, isBoolean, isSymbol, isFunction,
-  isObject, isArray, isSet, isMap, isDate, isRegExp, isFile, isBlob, isFormData, isArrayBuffer, isDocument, isWindow,
-  isPromise, isObservable, isTypedArray, isUsualObject,
+  isNull, isUndefined, isDefined, isNullish, isNaN, isString, isNumber, isBigInt, isBoolean,
+  isSymbol, isFunction, isObject, isArray, isSet, isMap, isDate, isRegExp, isFile, isBlob,
+  isFormData, isArrayBuffer, isDocument, isWindow, isPromise, isObservable, isTypedArray,
+  isUsualObject,
 } from './is/is';
 export {isEmpty} from './is-empty/is-empty';
 export {same} from './same/same';

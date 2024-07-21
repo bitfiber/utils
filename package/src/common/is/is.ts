@@ -198,7 +198,8 @@ export function isWindow(value: any): value is Window {
  * @param value - anything
  */
 export function isPromise(value: any): value is Promise<any> {
-  return !!value && (value.constructor === Promise || (isFunction(value.then) && isFunction(value.catch)));
+  return !!value && (value.constructor === Promise || (isFunction(value.then)
+    && isFunction(value.catch)));
 }
 
 /**
@@ -237,8 +238,8 @@ export function isTypedArray(value: any): value is TypedArr {
  * @param value - anything
  */
 export function isUsualObject(value: any): value is Obj {
-  return isObject(value) && !isArray(value) && !isTypedArray(value) && !isSet(value) && !isMap(value) && !isDate(value)
-    && !isRegExp(value) && !isFile(value) && !isBlob(value) && !isFormData(value) && !isArrayBuffer(value) && !isWindow(
-    value,
-  ) && !isDocument(value) && !isPromise(value) && !isObservable(value);
+  return isObject(value) && !isArray(value) && !isTypedArray(value) && !isSet(value)
+    && !isMap(value) && !isDate(value) && !isRegExp(value) && !isFile(value) && !isBlob(value)
+    && !isFormData(value) && !isArrayBuffer(value) && !isWindow(value) && !isDocument(value)
+    && !isPromise(value) && !isObservable(value);
 }

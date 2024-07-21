@@ -1,4 +1,6 @@
-import {BfError, isFunction, isObject, isRegExp, isString, same, equals, isArray} from '../../common';
+import {
+  BfError, isFunction, isObject, isRegExp, isString, same, equals, isArray,
+} from '../../common';
 import {hasOwn} from '../../obj';
 
 /**
@@ -47,8 +49,8 @@ export type MatchConditionNotEqual = {notEqual: any[]};
  * Represents a group of all object condition types
  * Used for the cnd function
  */
-export type MatchConditionObj = MatchConditionIs | MatchConditionOr | MatchConditionNot | MatchConditionEqual
-  | MatchConditionOrEqual | MatchConditionNotEqual;
+export type MatchConditionObj = MatchConditionIs | MatchConditionOr | MatchConditionNot
+  | MatchConditionEqual | MatchConditionOrEqual | MatchConditionNotEqual;
 
 /**
  * Represents a condition that is true if the value of each field matches each field condition
@@ -122,15 +124,23 @@ export function cnd(conditions: MatchConditions): MatchConditionFn {
   } else if ('is' in conditions) {
     return value => same(conditions.is, value);
   } else if ('or' in conditions) {
-    return value => (isArray(conditions.or) ? conditions.or.some(item => same(item, value)) : cndErr());
+    return value => (isArray(conditions.or)
+      ? conditions.or.some(item => same(item, value))
+      : cndErr());
   } else if ('not' in conditions) {
-    return value => (isArray(conditions.not) ? !conditions.not.some(item => same(item, value)) : cndErr());
+    return value => (isArray(conditions.not)
+      ? !conditions.not.some(item => same(item, value))
+      : cndErr());
   } else if ('equal' in conditions) {
     return value => fit(conditions.equal, value);
   } else if ('orEqual' in conditions) {
-    return value => (isArray(conditions.orEqual) ? conditions.orEqual.some(item => fit(item, value)) : cndErr());
+    return value => (isArray(conditions.orEqual)
+      ? conditions.orEqual.some(item => fit(item, value))
+      : cndErr());
   } else if ('notEqual' in conditions) {
-    return value => (isArray(conditions.notEqual) ? !conditions.notEqual.some(item => fit(item, value)) : cndErr());
+    return value => (isArray(conditions.notEqual)
+      ? !conditions.notEqual.some(item => fit(item, value))
+      : cndErr());
   } else {
     return obj => {
       if (isObject(obj)) {
@@ -184,5 +194,8 @@ function fit(condition: any, value: any): boolean {
 }
 
 function cndErr(): never {
-  throw new BfError('"or", "not", "orEqual" and "notEqual" must be an array', {code: 'bf_utils_arr_cnd_1'});
+  throw new BfError(
+    '"or", "not", "orEqual" and "notEqual" must be an array',
+    {code: 'bf_utils_arr_cnd_1'},
+  );
 }

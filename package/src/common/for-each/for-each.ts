@@ -1,4 +1,6 @@
-import {NumStr, BfError, INTERRUPT, isNumber, isFunction, isMap, isSet, isObject, hasIterator} from '../';
+import {
+  NumStr, BfError, INTERRUPT, isNumber, isFunction, isMap, isSet, isObject, hasIterator,
+} from '../';
 import {forEachArr} from '../../arr';
 import {forEachObj} from '../../obj';
 
@@ -9,7 +11,11 @@ import {forEachObj} from '../../obj';
  * @param handler - function called for each item
  * @param reverse - iterates in reverse order if true
  */
-export function forEach(obj: any, handler: (value: any, key: NumStr, obj: any) => any, reverse?: boolean): void {
+export function forEach(
+  obj: any,
+  handler: (value: any, key: NumStr, obj: any) => any,
+  reverse?: boolean,
+): void {
   if (hasIterator(obj)) {
     if (isMap(obj)) {
       const iterable = Array.from(obj);

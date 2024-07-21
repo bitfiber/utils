@@ -1,5 +1,6 @@
 import {
-  Index, isNaN, isDate, isRegExp, isFunction, isDefined, isMap, isSet, isObject, isArray, isTypedArray,
+  Index, isNaN, isDate, isRegExp, isFunction, isDefined, isMap, isSet, isObject, isArray,
+  isTypedArray,
 } from '../';
 import {hasOwn} from '../../obj';
 
@@ -18,7 +19,12 @@ export function equals(value1: any, value2: any, sortFn?: (a: any, b: any) => nu
   return _equals(value1, value2, new Map<any, true>(), sortFn);
 }
 
-function _equals(obj1: any, obj2: any, visited: Map<any, true>, sortFn?: (a: any, b: any) => number): boolean {
+function _equals(
+  obj1: any,
+  obj2: any,
+  visited: Map<any, true>,
+  sortFn?: (a: any, b: any) => number,
+): boolean {
   if (obj1 === obj2 || (isNaN(obj1) && isNaN(obj2))) {
     return true;
   } else if (isArray(obj1) || isTypedArray(obj1)) {
@@ -110,8 +116,8 @@ function _equals(obj1: any, obj2: any, visited: Map<any, true>, sortFn?: (a: any
     }
     visited.set(obj1, true);
 
-    if (!isObject(obj2) || isArray(obj2) || isTypedArray(obj2) || isDate(obj2) || isRegExp(obj2) || isMap(obj2)
-      || isSet(obj2)) {
+    if (!isObject(obj2) || isArray(obj2) || isTypedArray(obj2) || isDate(obj2) || isRegExp(obj2)
+      || isMap(obj2) || isSet(obj2)) {
       return false;
     }
 

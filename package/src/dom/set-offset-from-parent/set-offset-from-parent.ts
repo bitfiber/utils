@@ -23,7 +23,8 @@ export function setOffsetFromParent(element: HTMLElement, offset: Partial<TopLef
   }
 
   // If top or left is auto, need calculate real top and left relative to a non-static parent
-  if ((position === 'absolute' || position === 'fixed') && (styleTop === 'auto' || styleLeft === 'auto')) {
+  if ((position === 'absolute' || position === 'fixed')
+    && (styleTop === 'auto' || styleLeft === 'auto')) {
     const offsetFromParent = getOffsetFromParent(element);
     top = offsetFromParent.top;
     left = offsetFromParent.left;

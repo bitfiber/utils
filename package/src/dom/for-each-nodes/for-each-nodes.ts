@@ -6,7 +6,10 @@ import {INTERRUPT} from '../../common';
  * @param parent - a parent node
  * @param handler - function called for each node (Text, Comment, Element)
  */
-export function forEachNodes(parent: Node, handler: (child: Node, index: number, parent: Node) => any): void {
+export function forEachNodes(
+  parent: Node,
+  handler: (child: Node, index: number, parent: Node) => any,
+): void {
   parent.childNodes.forEach((child, i) => {
     if (handler(child, i, parent) !== INTERRUPT) {
       forEachNodes(child, handler);

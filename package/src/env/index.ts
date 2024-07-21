@@ -1,6 +1,7 @@
 export {
-  BotNames, PlatformNames, OSNames, EngineNames, BrowserNames, VersionData, OSData, EngineData, BrowserData,
-  EnginesCondition, BrowsersCondition, OSBrowsersCondition, OSCondition, PlatformsCondition,
+  BotNames, PlatformNames, OSNames, EngineNames, BrowserNames, VersionData, OSData, EngineData,
+  BrowserData, EnginesCondition, BrowsersCondition, OSBrowsersCondition, OSCondition,
+  PlatformsCondition,
 } from './types';
 export {getUserAgent, setUserAgent} from './user-agent/user-agent';
 export {getOS} from './get-os/get-os';

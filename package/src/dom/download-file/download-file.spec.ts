@@ -12,10 +12,10 @@ describe('@bitfiber/utils/dom/downloadFile', () => {
     win.fetch = jest.fn(() => mockFetchPromise);
     win.URL.createObjectURL = jest.fn(() => 'mock-url');
 
-    const data = await downloadFile('https://example.com/file/name');
+    const data = await downloadFile('https://example.com/file/name', {});
 
     expect(win.fetch).toHaveBeenCalledTimes(1);
-    expect(win.fetch).toHaveBeenCalledWith('https://example.com/file/name');
+    expect(win.fetch).toHaveBeenCalledWith('https://example.com/file/name', {});
     expect(data).toEqual(mockData);
     (<any>win).fetch.mockRestore(); // Clean up the mock
   });
@@ -29,7 +29,9 @@ describe('@bitfiber/utils/dom/downloadFile', () => {
     win.fetch = jest.fn(() => mockFetchPromise);
     win.URL.createObjectURL = jest.fn(() => 'mock-url');
 
-    await expect(downloadFile('https://example.com/file/name')).rejects.toThrow('Network response was not ok');
+    await expect(downloadFile('https://example.com/file/name')).rejects.toThrow(
+      'Network response was not ok',
+    );
 
     expect(win.fetch).toHaveBeenCalledTimes(1);
     (<any>win).fetch.mockRestore(); // Clean up the mock

@@ -5,10 +5,21 @@ import {getBot, getEnvData} from '../private/private';
 let os: OSData | null = null;
 
 const osConditions: EnvCondition[] = [
-  'xbox', ['windows', 'Windows (?:NT|XP)'], ['ios', '(?:iphone|ipad|FxiOS)', 'OS'], ['macOS', 'Macintosh', 'Mac OS X'],
-  ['webOS', '(?:web|hpw)[o0]s'], 'tizen', ['appleTV', 'apple[\\s_-]?TV', 'OS'], ['roku', 'Roku[\\w]{0,8}/DVP'],
-  ['chromeOS', 'CrOS(?: x86_64)?'], ['playstation4', 'PlayStation 4'], ['playstation5', 'PlayStation 5'],
-  ['nintendoSwitch', 'Nintendo Switch'], ['likeAndroid', 'like android'], 'android', ['linux', 'linux', 'rv:'],
+  'xbox',
+  ['windows', 'Windows (?:NT|XP)'],
+  ['ios', '(?:iphone|ipad|FxiOS)', 'OS'],
+  ['macOS', 'Macintosh', 'Mac OS X'],
+  ['webOS', '(?:web|hpw)[o0]s'],
+  'tizen',
+  ['appleTV', 'apple[\\s_-]?TV', 'OS'],
+  ['roku', 'Roku[\\w]{0,8}/DVP'],
+  ['chromeOS', 'CrOS(?: x86_64)?'],
+  ['playstation4', 'PlayStation 4'],
+  ['playstation5', 'PlayStation 5'],
+  ['nintendoSwitch', 'Nintendo Switch'],
+  ['likeAndroid', 'like android'],
+  'android',
+  ['linux', 'linux', 'rv:'],
 ];
 
 /**

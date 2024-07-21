@@ -1,7 +1,7 @@
 import {
-  isNaN, isArray, isArrayBuffer, isBigInt, isBlob, isBoolean, isDate, isDefined, isDocument, isFile, isFormData,
-  isFunction, isMap, isNull, isNumber, isObject, isObservable, isPromise, isRegExp, isSet, isString, isSymbol,
-  isTypedArray, isUndefined, isUsualObject, isWindow,
+  isNaN, isArray, isArrayBuffer, isBigInt, isBlob, isBoolean, isDate, isDefined, isDocument, isFile,
+  isFormData, isFunction, isMap, isNull, isNumber, isObject, isObservable, isPromise, isRegExp,
+  isSet, isString, isSymbol, isTypedArray, isUndefined, isUsualObject, isWindow,
 } from '../';
 
 function fn() {//
@@ -111,7 +111,6 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isBigInt({})).toBeFalsy();
     expect(isBigInt(fn)).toBeFalsy();
     expect(isBigInt(Symbol('sym'))).toBeFalsy();
-
     // expect(isBigInt(1n)).toBeTruthy(); // BigInt literals are not available when targeting lower than ES2020
   });
 
@@ -381,9 +380,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isObservable({})).toBeFalsy();
     expect(isObservable(fn)).toBeFalsy();
     expect(isObservable(Symbol('sym'))).toBeFalsy();
-    expect(isObservable({
-      pipe: () => true, subscribe: () => true,
-    })).toBeTruthy();
+    expect(isObservable({pipe: () => true, subscribe: () => true})).toBeTruthy();
   });
 
   it('isTypedArray', () => {
@@ -408,7 +405,6 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isTypedArray(new Uint8ClampedArray())).toBeTruthy();
     expect(isTypedArray(new Uint16Array())).toBeTruthy();
     expect(isTypedArray(new Uint32Array())).toBeTruthy();
-
     // expect(isTypedArray(new BigInt64Array())).toBeTruthy();
     // expect(isTypedArray(new BigUint64Array())).toBeTruthy();
   });
@@ -437,9 +433,7 @@ describe('@bitfiber/utils/common/is', () => {
     expect(isUsualObject(document)).toBeFalsy();
     expect(isUsualObject(window)).toBeFalsy();
     expect(isUsualObject(new Promise(fn))).toBeFalsy();
-    expect(isUsualObject({
-      pipe: () => true, subscribe: () => true,
-    })).toBeFalsy();
+    expect(isUsualObject({pipe: () => true, subscribe: () => true})).toBeFalsy();
     expect(isUsualObject(new Int32Array())).toBeFalsy();
     expect(isUsualObject(new Float64Array())).toBeFalsy();
   });

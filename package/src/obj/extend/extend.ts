@@ -7,8 +7,10 @@ import {forEachObj} from '../';
  * @param target - target object
  * @param sources - source objects
  */
-export function extend<T extends Obj, U extends Obj[]>(target: T,
-  ...sources: U): T & ValueIntersection<typeof sources> {
+export function extend<T extends Obj, U extends Obj[]>(
+  target: T,
+  ...sources: U
+): T & ValueIntersection<typeof sources> {
   return _extend(target, sources, false, new Map<any, true>());
 }
 
@@ -19,8 +21,10 @@ export function extend<T extends Obj, U extends Obj[]>(target: T,
  * @param target - target object
  * @param sources - source objects
  */
-export function extendAll<T extends Obj, U extends Obj[]>(target: T,
-  ...sources: U): T & ValueIntersection<typeof sources> {
+export function extendAll<T extends Obj, U extends Obj[]>(
+  target: T,
+  ...sources: U
+): T & ValueIntersection<typeof sources> {
   return _extend(target, sources, true, new Map<any, true>());
 }
 

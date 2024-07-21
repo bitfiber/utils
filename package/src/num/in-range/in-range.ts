@@ -36,7 +36,11 @@ export interface InRangeOptions {
  * @param options - options for converting the numeric value
  */
 export function inRange(value: number | Nullish, options: InRangeOptions = {}): number | null {
-  let newValue = isNumber(value) ? (isNumber(options.precision) ? round(value, options.precision) : value) : null;
+  let newValue = isNumber(value)
+    ? (isNumber(options.precision)
+      ? round(value, options.precision)
+      : value)
+    : null;
 
   if (isNumber(newValue)) {
     if (isNumber(options.min) && newValue < options.min) {

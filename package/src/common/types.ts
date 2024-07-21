@@ -26,8 +26,8 @@ export type Arr<T = any> = ReadonlyArray<T> | ArrayLike<T>;
 /**
  * Represents all typed array types
  */
-export type TypedArr = Int8Array | Int16Array | Int32Array | Float32Array | Float64Array | Uint8Array
-  | Uint8ClampedArray | Uint16Array | Uint32Array | BigInt64Array | BigUint64Array;
+export type TypedArr = Int8Array | Int16Array | Int32Array | Float32Array | Float64Array
+  | Uint8Array | Uint8ClampedArray | Uint16Array | Uint32Array | BigInt64Array | BigUint64Array;
 
 /**
  * Represents any object
@@ -49,16 +49,26 @@ export interface Index<T = any> {
 export type ArrObj<T = any> = Arr<T> | Obj<T>;
 
 /**
+ * Returns an object type with fields of any type except the specified type
+ */
+export type OmitType<T, V> = {[K in keyof T as T[K] extends V ? never : K]: T[K]};
+
+/**
+ * Returns the type of object with fields of a certain type
+ */
+export type PickType<T, V> = {[K in keyof T as T[K] extends V ? K : never]: T[K]};
+
+/**
  * Converts a type union to a type intersection
  */
-export type UnionToIntersection<U> = (U extends any ? (x: U) => void : never) extends ((x: infer I) => void) ? I
-  : never;
+export type UnionToIntersection<U> = (U extends any
+  ? (x: U) => void : never) extends ((x: infer I) => void) ? I : never;
 
 /**
  * Represents the union of object value types or array value types
  */
-export type ValueUnion<T extends ArrObj, K extends keyof T = keyof T> = T extends ReadonlyArray<any> ? T[number]
-  : T extends ArrayLike<any> ? T[number] : T extends object ? T[K] : never;
+export type ValueUnion<T extends ArrObj, K extends keyof T = keyof T> = T extends ReadonlyArray<any>
+  ? T[number] : T extends ArrayLike<any> ? T[number] : T extends object ? T[K] : never;
 
 /**
  * Represents the intersection of object value types or array value types

@@ -44,7 +44,9 @@ export function getEnvData(conditions: EnvCondition[], needVersion = false): Env
     const tests = isArray(test) ? test : (isUndefined(test) ? [name] : [test]);
 
     if (needVersion) {
-      ver = isUndefined(ver) ? getVerRegExp(isString(test) ? test : name) : (isString(ver) ? getVerRegExp(ver) : ver);
+      ver = isUndefined(ver)
+        ? getVerRegExp(isString(test) ? test : name)
+        : (isString(ver) ? getVerRegExp(ver) : ver);
     }
 
     for (let test of tests) {

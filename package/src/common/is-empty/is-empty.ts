@@ -1,4 +1,6 @@
-import {isNumber, isBigInt, isBoolean, isSymbol, isString, isDate, isRegExp, isFunction, isDefined} from '../';
+import {
+  isNumber, isBigInt, isBoolean, isSymbol, isString, isDate, isRegExp, isFunction, isDefined,
+} from '../';
 import {hasOwn} from '../../obj';
 
 /**

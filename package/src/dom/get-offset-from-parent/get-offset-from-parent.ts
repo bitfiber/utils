@@ -1,5 +1,7 @@
 import {BfError, toFloat} from '../../common';
-import {Offset, hasName, getNonStaticParent, getOffsetFromWin, getOffsetFromDoc, getStyle} from '../';
+import {
+  Offset, hasName, getNonStaticParent, getOffsetFromWin, getOffsetFromDoc, getStyle,
+} from '../';
 
 /**
  * Returns the offset relative to the closest non-static parent element.
@@ -11,7 +13,10 @@ export function getOffsetFromParent(element: HTMLElement): Offset {
   let parentOffset: Offset;
 
   if (hasName(element, 'html') || hasName(element, 'body')) {
-    throw new BfError('Element cannot be html or body', {code: 'bf_utils_dom_getOffsetFromParent_1'});
+    throw new BfError(
+      'Element cannot be html or body',
+      {code: 'bf_utils_dom_getOffsetFromParent_1'},
+    );
   }
 
   if (getStyle(element, 'position') === 'fixed') {

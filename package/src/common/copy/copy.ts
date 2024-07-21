@@ -1,6 +1,7 @@
 import {
-  isNumber, isBigInt, isBoolean, isString, isDate, isRegExp, isFunction, isMap, isSet, isObject, isArray, isTypedArray,
-  isBlob, isArrayBuffer, isWindow, isDocument, isFile, isFormData, isPromise, isObservable,
+  isNumber, isBigInt, isBoolean, isString, isDate, isRegExp, isFunction, isMap, isSet, isObject,
+  isArray, isTypedArray, isBlob, isArrayBuffer, isWindow, isDocument, isFile, isFormData, isPromise,
+  isObservable,
 } from '../';
 import {forEachObj} from '../../obj';
 
@@ -14,7 +15,8 @@ export function copy<T>(value: T): T {
 }
 
 function _copy(value: any, visited: Map<any, any>): any {
-  if (!value || isString(value) || isNumber(value) || isBigInt(value) || isBoolean(value) || isFunction(value)) {
+  if (!value || isString(value) || isNumber(value) || isBigInt(value) || isBoolean(value)
+    || isFunction(value)) {
     return value;
   } else if (isDate(value)) {
     return new Date(value.getTime());
@@ -61,8 +63,8 @@ function _copy(value: any, visited: Map<any, any>): any {
   } else if (isTypedArray(value)) {
     // @ts-ignore
     return new value.constructor(value.buffer.slice(0), value.byteOffset, value.length);
-  } else if (isWindow(value) || isDocument(value) || isFile(value) || isFormData(value) || isPromise(value)
-    || isObservable(value)) {
+  } else if (isWindow(value) || isDocument(value) || isFile(value) || isFormData(value)
+    || isPromise(value) || isObservable(value)) {
     return value;
   } else if (isObject(value)) {
     if (visited.has(value)) {

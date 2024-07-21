@@ -7,8 +7,10 @@ import {hasOwn} from '../';
  * @param obj - any object
  * @param handler - function called for each field
  */
-export function forEachObj<T extends Obj, K extends keyof T>(obj: T,
-  handler: (value: ValueUnion<T>, key: K, obj: T) => any): void {
+export function forEachObj<T extends Obj, K extends keyof T>(
+  obj: T,
+  handler: (value: ValueUnion<T>, key: K, obj: T) => any,
+): void {
   for (const key in obj) {
     if (hasOwn(obj, key) && handler(obj[key], <Extract<K, string>>key, obj) === INTERRUPT) {
       return;

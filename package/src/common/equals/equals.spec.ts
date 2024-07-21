@@ -47,24 +47,36 @@ describe('@bitfiber/utils/equals', () => {
     expect(equals(/^reg$/, /^reg$/)).toBeTruthy();
     expect(equals(/^reg$/, /^reg2$/)).toBeFalsy();
     expect(equals(reg, reg)).toBeTruthy();
-    expect(
-      equals(new Set([true, [true, 1, {test: [[true]]}], 'str']), new Set([true, [true, 1, {test: [[true]]}], 'str'])),
-    )
+    expect(equals(
+      new Set([true, [true, 1, {test: [[true]]}], 'str']),
+      new Set([true, [true, 1, {test: [[true]]}], 'str']),
+    ))
       .toBeTruthy();
-    expect(
-      equals(new Set([true, [true, 1, 'str', {test: [[true]]}]]), new Set([true, [true, 1, {test: [[true]]}], 'str'])),
-    )
+    expect(equals(
+      new Set([true, [true, 1, 'str', {test: [[true]]}]]),
+      new Set([true, [true, 1, {test: [[true]]}], 'str']),
+    ))
       .toBeFalsy();
-    expect(
-      equals(new Set([true, [true, 1, {test: [[true]]}], 'str2']), new Set([true, [true, 1, {test: [[true]]}], 'str'])),
-    )
+    expect(equals(
+      new Set([true, [true, 1, {test: [[true]]}], 'str2']),
+      new Set([true, [true, 1, {test: [[true]]}], 'str']),
+    ))
       .toBeFalsy();
     expect(equals(set, set)).toBeTruthy();
-    expect(equals(new Map([[true, [true, 1, {test: [[true]]}]]]), new Map([[true, [true, 1, {test: [[true]]}]]])))
+    expect(equals(
+      new Map([[true, [true, 1, {test: [[true]]}]]]),
+      new Map([[true, [true, 1, {test: [[true]]}]]]),
+    ))
       .toBeTruthy();
-    expect(equals(new Map([[true, [true, 1, {test: [[true]]}]]]), new Map([[[true, 1, {test: [[true]]}], true]])))
+    expect(equals(
+      new Map([[true, [true, 1, {test: [[true]]}]]]),
+      new Map([[[true, 1, {test: [[true]]}], true]]),
+    ))
       .toBeFalsy();
-    expect(equals(new Map([[true, [true, 1, {test: [[true]]}]]]), new Map([[false, [true, 1, {test: [[true]]}]]])))
+    expect(equals(
+      new Map([[true, [true, 1, {test: [[true]]}]]]),
+      new Map([[false, [true, 1, {test: [[true]]}]]]),
+    ))
       .toBeFalsy();
     expect(equals(map, map)).toBeTruthy();
     expect(equals(fn, () => {//

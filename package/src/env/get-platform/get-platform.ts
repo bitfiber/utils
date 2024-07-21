@@ -7,12 +7,16 @@ let platform: PlatformNames | null = null;
 const platformConditions: EnvCondition[] = [
   [
     'tv', [
-      () => ['tizen', 'webOS', 'appleTV', 'roku', 'xbox', 'playstation4', 'playstation5'].includes(getOS().name),
-      '(?:smart|web|google|hbb)[\\s:_/-]?tv', 'bravia',
+      () => ['tizen', 'webOS', 'appleTV', 'roku', 'xbox', 'playstation4', 'playstation5']
+        .includes(getOS().name),
+      '(?:smart|web|google|hbb)[\\s:_/-]?tv',
+      'bravia',
     ],
-  ], ['desktop', [() => ['macOS', 'chromeOS', 'windows', 'linux'].includes(getOS().name)]],
+  ],
+  ['desktop', [() => ['macOS', 'chromeOS', 'windows', 'linux'].includes(getOS().name)]],
   ['tablet', [() => ['nintendoSwitch'].includes(getOS().name), 'ipad', 'silk', 'tablet']],
-  ['mobile', ['iphone', 'android.*?mobi(?:le)?']], ['tablet', 'android'],
+  ['mobile', ['iphone', 'android.*?mobi(?:le)?']],
+  ['tablet', 'android'],
 ];
 
 /**
@@ -21,7 +25,9 @@ const platformConditions: EnvCondition[] = [
  */
 export function getPlatform(): PlatformNames {
   const bot = getBot();
-  platform ??= bot.name !== 'unknown' ? bot.name : <PlatformNames>getEnvData(platformConditions).name;
+  platform ??= bot.name !== 'unknown'
+    ? bot.name
+    : <PlatformNames>getEnvData(platformConditions).name;
   return <PlatformNames>platform;
 }
 

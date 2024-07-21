@@ -13,25 +13,27 @@ different projects and domains.
 
 ## Key Features
 
-1. **Strict Typing:** The library leverages TypeScript to enforce strict typing, ensuring robust type checking at
-   compile time. This reduces the likelihood of runtime errors and enhances code reliability. TypeScript's type
-   inference capabilities also aid in writing cleaner and more maintainable code.
+1. **Strict Typing:** The library leverages TypeScript to enforce strict typing, ensuring robust
+   type checking at compile time. This reduces the likelihood of runtime errors and enhances code
+   reliability. TypeScript's type inference capabilities also aid in writing cleaner and more
+   maintainable code.
 
-2. **Tree Shaking:** The library's modular design enables tree shaking, allowing developers to optimize bundle sizes by
-   selectively importing only the necessary functionalities. This eliminates unused code, resulting in smaller and more
-   efficient applications.
+2. **Tree Shaking:** The library's modular design enables tree shaking, allowing developers to
+   optimize bundle sizes by selectively importing only the necessary functionalities.
+   This eliminates unused code, resulting in smaller and more efficient applications.
 
 3. **Common Use Cases:**
-    * Common Functions: Additional general-purpose utilities for tasks such as type checking, and more.
-    * String Manipulation: Functions for capitalizing strings, converting case, and more.
-    * Working with Numbers: Functions for numerical operations, such as rounding, formatting, converting, and more.
-    * Array Operations: Helper functions for working with arrays, such as comparison, traversal, mapping, and more.
-    * Object Operations: Utilities for working with objects, including functions for merging objects, deep cloning,
-      property access, and more.
-    * DOM Manipulation: Utilities for interacting with the Document Object Model (DOM), including functions for style
-      manipulation, traversal, and more.
-    * Environment Handling: Functions for utilizing User Agent information for tailored content delivery and feature
-      adaptation.
+
+* Common Functions: Additional general-purpose utilities for tasks such as type checking, and more.
+* String Manipulation: Functions for capitalizing strings, converting case, and more.
+* Working with Numbers: Functions for numerical operations, such as rounding, formatting, converting, and more.
+* Array Operations: Helper functions for working with arrays, such as comparison, traversal, mapping, and more.
+* Object Operations: Utilities for working with objects, including functions for merging objects, deep cloning,
+  property access, and more.
+* DOM Manipulation: Utilities for interacting with the Document Object Model (DOM), including functions for style
+  manipulation, traversal, and more.
+* Environment Handling: Functions for utilizing User Agent information for tailored content delivery and feature
+  adaptation.
 
 ---
 
@@ -285,8 +287,16 @@ If the handler returns INTERRUPT, the loop will be interrupted
 ```ts
 import {forEach, INTERRUPT} from '@bitfiber/utils';
 
-forEach(new Set([1, 2, 3]), (item, i) => console.log(item), true); // 3 -> 2 -> 1
-forEach(new Map([[1, 1], [2, 2], [3, 3]]), (item, i) => (item === 2 ? INTERRUPT : console.log(item))); // 1
+forEach(
+  new Set([1, 2, 3]),
+  (item, i) => console.log(item),
+  true
+); // 3 -> 2 -> 1
+
+forEach(
+  new Map([[1, 1], [2, 2], [3, 3]]),
+  (item, i) => (item === 2 ? INTERRUPT : console.log(item))
+); // 1
 ```
 
 ---
@@ -973,10 +983,7 @@ Makes an object and its nested objects read-only
 ```ts
 import {deepConstant} from '@bitfiber/utils/obj';
 
-const readOnlyObj = deepConstant({
-  a: 1,
-  b: {c: 2}
-});
+const readOnlyObj = deepConstant({a: 1, b: {c: 2}});
 ```
 
 ---
@@ -995,19 +1002,10 @@ Returns the difference between two objects
 ```ts
 import {diffObj} from '@bitfiber/utils/obj';
 
-const result = diffObj({
-  a: 1,
-  b: 2,
-  c: {d: 4},
-  e: {f: 5},
-  i: 7
-}, {
-  a: 1,
-  b: 3,
-  c: {d: 4},
-  e: {g: 5},
-  j: 8
-});
+const result = diffObj(
+  {a: 1, b: 2, c: {d: 4}, e: {f: 5}, i: 7},
+  {a: 1, b: 3, c: {d: 4}, e: {g: 5}, j: 8},
+);
 
 /*
 result = {
@@ -1036,10 +1034,7 @@ Returns a new object with the fields of the passed object, excluding the specifi
 ```ts
 import {exclude} from '@bitfiber/utils/obj';
 
-const obj = exclude({
-  a: 1,
-  b: 2
-}, 'b'); // {a: 1}
+const obj = exclude({a: 1, b: 2}, 'b'); // {a: 1}
 ```
 
 ---
@@ -1098,14 +1093,16 @@ If the handler returns INTERRUPT, the loop will be interrupted
 import {INTERRUPT} from '@bitfiber/utils';
 import {forEachObj} from '@bitfiber/utils/obj';
 
-forEachObj({
-  a: 1,
-  b: 2
-}, (v, k) => console.log(v), true); // 2 -> 1
-forEachObj({
-  a: 1,
-  b: 2
-}, (v, k) => (v === 2 ? INTERRUPT : console.log(v))); // 1
+forEachObj(
+  {a: 1, b: 2},
+  (v, k) => console.log(v),
+  true,
+); // 2 -> 1
+
+forEachObj(
+  {a: 1, b: 2},
+  (v, k) => (v === 2 ? INTERRUPT : console.log(v)),
+); // 1
 ```
 
 ---
@@ -1123,14 +1120,8 @@ If the property is inherited, or does not exist, the method returns false
 ```ts
 import {hasOwn} from '@bitfiber/utils/obj';
 
-hasOwn({
-  a: 1,
-  b: 2
-}, 'a'); // true
-hasOwn({
-  a: 1,
-  b: 2
-}, 'c'); // false
+hasOwn({a: 1, b: 2}, 'a'); // true
+hasOwn({a: 1, b: 2}, 'c'); // false
 ```
 
 ---
@@ -1148,10 +1139,7 @@ Returns a new object with the specified set of fields
 ```ts
 import {include} from '@bitfiber/utils/obj';
 
-const obj = include({
-  a: 1,
-  b: 2
-}, 'b'); // {b: 2}
+const obj = include({a: 1, b: 2}, 'b'); // {b: 2}
 ```
 
 ---
@@ -1168,10 +1156,7 @@ Returns an array of the object's own enumerable property names
 ```ts
 import {keys} from '@bitfiber/utils/obj';
 
-const arr = keys({
-  a: 1,
-  b: 2
-}, 'b'); // ['a', 'b']
+const arr = keys({a: 1, b: 2}, 'b'); // ['a', 'b']
 ```
 
 ---
@@ -1189,10 +1174,7 @@ Returns a new object, which has the mapped values of object fields
 ```ts
 import {mapObj} from '@bitfiber/utils/obj';
 
-const obj = mapObj({
-  a: 1,
-  b: 2
-}, (v, k) => k); // {a: 'a', b: 'b'}
+const obj = mapObj({a: 1, b: 2}, (v, k) => k); // {a: 'a', b: 'b'}
 ```
 
 ---
@@ -1210,10 +1192,10 @@ Returns an array, which has the mapped values of object fields
 ```ts
 import {mapObjToArr} from '@bitfiber/utils/obj';
 
-const arr = mapObjToArr({
-  a: 1,
-  b: 2
-}, (v, k) => [k, v]); // [['a', 1], ['b', 2]]
+const arr = mapObjToArr(
+  {a: 1, b: 2},
+  (v, k) => [k, v],
+); // [['a', 1], ['b', 2]]
 ```
 
 ---
@@ -1230,10 +1212,7 @@ Returns an array of values for each object's own enumerable property
 ```ts
 import {values} from '@bitfiber/utils/obj';
 
-const arr = values({
-  a: 1,
-  b: 2
-}); // [1, 2]
+const arr = values({a: 1, b: 2}); // [1, 2]
 ```
 
 ---
@@ -1418,13 +1397,8 @@ or the function that should return the index value
 import {indexBy} from '@bitfiber/utils/arr';
 
 const arr = [
-  {
-    id: '1',
-    name: 'Alex'
-  }, {
-    id: '2',
-    name: 'Mary'
-  }
+  {id: '1', name: 'Alex'},
+  {id: '2', name: 'Mary'},
 ];
 indexBy(arr, 'name'); // {Alex: {id: '1', name: 'Alex'}, Mary: {id: '2', name: 'Mary'}}
 ```
@@ -1445,14 +1419,10 @@ Returns an array with values, each of which corresponds to the value of a certai
 import {pluck} from '@bitfiber/utils/arr';
 
 const arr = [
-  {
-    id: '1',
-    name: 'Alex'
-  }, {
-    id: '2',
-    name: 'Mary'
-  }
+  {id: '1', name: 'Alex'},
+  {id: '2', name: 'Mary'}
 ];
+
 pluck(arr, 'name'); // ['Alex', 'Mary']
 ```
 
@@ -1565,16 +1535,8 @@ inRange(10.11, {precision: 0}); // 10
 inRange(10.11, {precision: 1}); // 10.1
 inRange(null, {required: true}); // 0
 inRange(null, {min: 10}); // null
-inRange(null, {
-  min: 10,
-  required: true
-}); // 10
-inRange(30.555, {
-  min: 10,
-  max: 20.3,
-  precision: 1,
-  required: true
-}); // 20.3
+inRange(null, {min: 10, required: true}); // 10
+inRange(30.555, {min: 10, max: 20.3, precision: 1, required: true}); // 20.3
 ```
 
 ---
@@ -1658,6 +1620,7 @@ setDocument(inject(DOCUMENT));
 Creates an offer to download a file from URL in the browser.  
 Returns a promise that returns a blob if the download is successful  
 `@param url: string` - file URL  
+`@param fetchOptions?: RequestInit` - fetch options  
 `@returns Promise<Blob>`
 
 **Example:**
@@ -2030,10 +1993,7 @@ import {setOffsetFromParent} from '@bitfiber/utils/dom';
 
 const doc = getDocument();
 const div = doc.createElement('div');
-setOffsetFromParent(div, {
-  top: 30,
-  left: 40
-});
+setOffsetFromParent(div, {top: 30, left: 40});
 ```
 
 ---
@@ -2073,10 +2033,10 @@ import {setStyles} from '@bitfiber/utils/dom';
 
 const doc = getDocument();
 const div = doc.createElement('div');
-const prevStyles = setStyles(div, {
-  width: '200px',
-  height: '10px',
-}); // {width: '100px', height: '5px'}
+const prevStyles = setStyles(
+  div,
+  {width: '200px', height: '10px'},
+); // {width: '100px', height: '5px'}
 ```
 
 ---
@@ -2390,8 +2350,7 @@ matches({desktop: {windows: {chrome: '96.0.4664.110'}}});
 matches({
   desktop: {
     windows: {
-      osVersion: '~10',
-      engines: 'blink'
+      osVersion: '~10', engines: 'blink'
     }
   }
 });
@@ -2400,10 +2359,8 @@ matches({
   desktop: {
     anyOS: {
       engines: {
-        blink: '>90.5',
-        gecko: '<=100'
+        blink: '>90.5', gecko: '<=100'
       }
-
     }
   }
 });
@@ -2411,8 +2368,7 @@ matches({
 matches({
   anyPlatform: {
     ios: {
-      chrome: '~96.1',
-      safari: '>80'
+      chrome: '~96.1', safari: '>80'
     }
   }
 });
@@ -2444,22 +2400,13 @@ to browser version conditions
 ```ts
 import {matchesWithBrowsers} from '@bitfiber/utils/env';
 
-matchesWithBrowsers({
-  firefox: '>=95.5',
-  chrome: '~96.0.4664'
-});
+matchesWithBrowsers({firefox: '>=95.5', chrome: '~96.0.4664'});
+
+matchesWithBrowsers({engines: 'gecko', firefox: '>100.1'});
 
 matchesWithBrowsers({
-  engines: 'gecko',
-  firefox: '>100.1'
-});
-
-matchesWithBrowsers({
-  engines: {
-    blink: '~96',
-    gecko: '110.5.0'
-  },
-  firefox: '>100.1'
+  engines: {blink: '~96', gecko: '110.5.0'},
+  firefox: '>100.1',
 });
 ```
 

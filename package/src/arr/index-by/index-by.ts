@@ -7,7 +7,10 @@ import {isFunction, Obj, Index} from '../../common';
  * @param fieldOrFn - the name of the field from which the index value should be taken,
  * or the function that should return the index value
  */
-export function indexBy<T extends Obj>(arr: T[], fieldOrFn: string | ((item: T) => string)): Index<T> {
+export function indexBy<T extends Obj>(
+  arr: T[],
+  fieldOrFn: string | ((item: T) => string),
+): Index<T> {
   const result: Index<T> = {};
   arr.forEach(item => {
     const key = isFunction(fieldOrFn) ? fieldOrFn(item) : item[fieldOrFn];
